@@ -1,0 +1,29 @@
+{
+  "parserOptions": { 
+    "ecmaVersion": 2018 
+  },
+  "env": { 
+    "es6": true, 
+    "node": true, 
+    "mocha": true 
+  }, 
+  "rules": { 
+    "camelcase": "off",
+    "linebreak-style": "off",
+    "no-console": "warn", 
+    "no-use-before-define": "warn", 
+    "no-unused-vars": "warn",
+    "no-tabs": "off",
+    "semi": ["error", "always"],
+    "spaced-comment": "warn" ,
+    "indent": ["error", "tab"],
+    "handle-callback-err":"off",
+    "max-len":"off",
+    "require-jsdoc" : 0,
+    "no-console": "off",
+    "new-cap": "warn"
+  }, 
+  "extends": [ 
+    "google" 
+  ]
+} 
