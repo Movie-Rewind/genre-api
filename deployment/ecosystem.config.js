@@ -1,10 +1,10 @@
 module.exports = {
   apps : [{
-    name   : "TEMPLATE",
+    name   : "genre-api",
     script : "npm run start",
     instances: 1,
     env: {
-      PORT: 619
+      PORT: 8888
     },
     increment_var : 'PORT',
   }]

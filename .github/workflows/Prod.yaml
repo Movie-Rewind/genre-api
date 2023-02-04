@@ -26,3 +26,11 @@ jobs:
       run: cd src && npm run lint
     - name: run tests
       run: cd src && npm run test
+    - uses: actions/checkout@v1
+    - name: deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: cd ${{ secrets.PROJECT_PATH }} && git fetch && git pull && cd ./src && echo "${{secrets.NPMRC}}" > .npmrc && echo "MONGO_URI=${{ secrets.MONGO_URI }}" > .env && npm i && pm2 restart all && sudo systemctl restart nginx
